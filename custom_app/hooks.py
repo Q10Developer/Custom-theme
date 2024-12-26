@@ -25,8 +25,11 @@ app_license = "mit"
 # ------------------
 
 # include js, css files in header of desk.html
-# app_include_css = "/assets/custom_app/css/custom_app.css"
-# app_include_js = "/assets/custom_app/js/custom_app.js"
+app_include_css = ["/assets/custom_app/css/theme.css",
+                   "/assets/custom_app/css/sidebar.css",]
+
+app_include_js = ["/assets/custom_app/js/page.js",
+                  "/assets/custom_app/js/theme.js",]
 
 # include js, css files in header of web template
 # web_include_css = "/assets/custom_app/css/custom_app.css"
@@ -47,6 +50,11 @@ app_license = "mit"
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
+
+
+extend_bootinfo = [
+	"custom_app.boot.custom_get_workspace_sidebar_items",
+]
 
 # Svg Icons
 # ------------------
