@@ -56,6 +56,19 @@ extend_bootinfo = [
 	"custom_app.boot.custom_get_workspace_sidebar_items",
 ]
 
+
+
+fixtures = [
+    "Custom Field",  # Add the types of data you want to export
+    "Property Setter",
+    "Client Script",
+    "Custom DocPerm",
+    {"dt": "Print Format", "filters": [["module", "in", ["Theme"]]]},
+    {"dt": "Report", "filters": [["module", "in", ["Theme"]]]},
+    {"dt": "DocType", "filters": [["module", "in", ["Theme"]]]}
+]
+
+
 # Svg Icons
 # ------------------
 # include app icons in desk

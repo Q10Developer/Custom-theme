@@ -1,0 +1,13 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Sales Order",
+  "enabled": 0,
+  "modified": "2024-12-26 15:44:25.770694",
+  "module": null,
+  "name": "Sales Order",
+  "script": "frappe.ui.form.on('Sales Order', {\n\trefresh(frm) {\n\t\t// your code here\n\t}\n})\nfrappe.ui.form.on('Sales Order', {\n\trefresh(frm) {\n\t\t// your code here\n\t}\n})\nfrappe.ui.form.on('Sales Order', {\n\trefresh(frm) {\n\t\t// your code here\n\t}\n})",
+  "view": "Form"
+ }
+]

@@ -1,0 +1,39 @@
+[
+ {
+  "add_total_row": 0,
+  "columns": [],
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Report",
+  "filters": [],
+  "is_standard": "No",
+  "javascript": null,
+  "json": null,
+  "letter_head": null,
+  "modified": "2024-12-27 11:02:54.846282",
+  "module": "Theme",
+  "name": "Test",
+  "prepared_report": 0,
+  "query": "select * from `tabSales Invoice` where docstatus=1",
+  "ref_doctype": "Sales Invoice",
+  "reference_report": null,
+  "report_name": "Test",
+  "report_script": null,
+  "report_type": "Query Report",
+  "roles": [
+   {
+    "parent": "Test",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Accounts Manager"
+   },
+   {
+    "parent": "Test",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Accounts User"
+   }
+  ],
+  "timeout": 0
+ }
+]
