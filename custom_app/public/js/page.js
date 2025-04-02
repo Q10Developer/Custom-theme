@@ -30,25 +30,36 @@ frappe.ui.Page = class CustomPage extends frappe.ui.Page{
 		<div class="custom_sidebar">
         <ul class="nav-links">`
 		
-		$.each(frappe.boot.custom_workspace.pages,  function(i,  item) {
-			sb +=`<li>
-				<div class="icon-link">
-				<a href="/app/${
-						item.public
-						? frappe.router.slug(item.title)
-						: "private/" + frappe.router.slug(item.title)
-				}">
-					<i class='${__(item.custom__icon)}'></i>
-					<span class="link_name">${__(item.title)}</span>
-				  </a>
-				<ul class="sub-menu blank">
-					<li><a class="link_name" href="#">${__(item.title)}</a></li>
-				</ul>` 
-				if(item.submenu){
-				sb +=`<i class='fa fa-chevron-down arrow' style="min-width: 40px;"></i>` 
+
+		$(frappe.render_template("page", {})).appendTo(this.wrapper);
+		
+		var sb =`<div class="row layout-main">
+		<div class="custom_sidebar">
+        <ul class="nav-links">`
+		
+		$.each(frappe.boot.custom_workspace.pages, function (i, item) {
+			if (item.title === "Recruitment") { // Show only Recruitment menu with open submenu
+				sb += `<li class="open"> <!-- Add 'open' class to keep submenu expanded -->
+					<div class="icon-link">
+						<a href="/app/${
+							item.public
+								? frappe.router.slug(item.title)
+								: "private/" + frappe.router.slug(item.title)
+						}">
+							<i class='${__(item.custom__icon)}'></i>
+							<span class="link_name">${__(item.title)}</span>
+						</a>
+						<ul class="sub-menu"> <!-- Remove 'blank' class to keep it visible -->
+							<li><a class="link_name" href="#">${__(item.title)}</a></li>
+						</ul>`;
+				if (item.submenu) {
+					sb += `<i class='fa fa-chevron-down arrow' style="min-width: 40px;"></i>`;
 				}
-        		sb +=`</div>` + item.submenu + `</li>`
-		})
+				sb += `</div>` + item.submenu + `</li>`;
+			}
+		});
+		
+		
 		sb +=`</ul></div>
 			<div class="col-lg-2 layout-side-section"></div>
 			<div class="col layout-main-section-wrapper">
